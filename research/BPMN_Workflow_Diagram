@@ -1,0 +1,21 @@
+digraph BPMN_Workflow {
+	rankdir=TB
+	start [label=Start color=lightpink shape=ellipse style=filled]
+	task1 [label="Student: Logs in to the university's website" color=moccasin shape=box style=filled]
+	start -> task1
+	task2 [label="Student: Takes an online exam" color=moccasin shape=box style=filled]
+	task1 -> task2
+	task3 [label="System: Grades the exam" color=moccasin shape=box style=filled]
+	task2 -> task3
+	gateway1 [label=X color=lightblue shape=diamond style=filled]
+	task3 -> gateway1
+	task4 [label="Student: Takes the exam again
+If Score below 60%" color=moccasin shape=box style=filled]
+	gateway1 -> task4 [label="Score below 60%"]
+	task5 [label="Professor: Enters the grade
+If Score 60% or higher" color=moccasin shape=box style=filled]
+	gateway1 -> task5 [label="Score 60% or higher"]
+	end [label=End color=lightpink shape=ellipse style=filled]
+	task4 -> end
+	task5 -> end
+}
