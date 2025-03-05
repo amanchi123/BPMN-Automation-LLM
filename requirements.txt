@@ -1,0 +1,8 @@
+openai==0.28
+graphviz
+python-dotenv
+pandas
+numpy
+-e .
+
+
